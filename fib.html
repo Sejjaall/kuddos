@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci</title>
+    <h1> Fibonaaci series of 10 </h1>
+    <script>
+        
+        t1 = 1;
+        t2 = 2;
+        j = 3;
+        let s=[t1, t2];
+        while (j <= 10) {
+            t3 = t1 + t2;
+s.push(t3);
+            t1 = t2;
+            t2 = t3;
+            j++;
+           
+        }
+        document.write(s.join(",") + "<br>");
+        document.write(t3);
+    </script>
+</head>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (name === "" || email === "" || password === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // Regular expression to validate email format
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            // Password must be at least 6 characters long
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Validation Example</h1>
+    <form onsubmit="validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <button type="submit"> Submit</button>
+    </form>
+</body>
+</html>
+
